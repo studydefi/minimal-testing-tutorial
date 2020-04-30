@@ -1,0 +1,28 @@
+{
+  "name": "minimal-testing-tutorial",
+  "version": "1.0.0",
+  "description": "Demonstrates testing off a fork of Mainnet. More details here: https://studydefi.com/testing-on-mainnet/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/studydefi/minimal-testing-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/studydefi/minimal-testing-tutorial/issues"
+  },
+  "homepage": "https://github.com/studydefi/minimal-testing-tutorial#readme",
+  "dependencies": {
+    "@studydefi/money-legos": "^2.0.7",
+    "ethers": "^4.0.47"
+  },
+  "devDependencies": {
+    "ganache-core": "^2.10.2",
+    "jest": "^25.5.2"
+  }
+}
