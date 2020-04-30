@@ -37,7 +37,7 @@ describe("do some tests", () => {
     const daiContract = new ethers.Contract(
       erc20.dai.address,
       erc20.dai.abi,
-      wallet
+      wallet,
     )
     const daiBalanceWei = await daiContract.balanceOf(wallet.address)
     const daiBalance = ethers.utils.formatUnits(daiBalanceWei, 18)
@@ -49,28 +49,28 @@ describe("do some tests", () => {
     const ethBalance = ethers.utils.formatEther(ethBalanceWei)
     expect(parseFloat(ethBalance)).toBe(1000)
   })
-  
+
   test("buy DAI from Uniswap", async () => {
     // 1. instantiate contracts
     const daiContract = new ethers.Contract(
       erc20.dai.address,
       erc20.dai.abi,
-      wallet
+      wallet,
     )
     const uniswapFactoryContract = new ethers.Contract(
       uniswap.factory.address,
       uniswap.factory.abi,
-      wallet
+      wallet,
     )
     const daiExchangeAddress = await uniswapFactoryContract.getExchange(
-      erc20.dai.address
+      erc20.dai.address,
     )
     const daiExchangeContract = new ethers.Contract(
       daiExchangeAddress,
       uniswap.exchange.abi,
-      wallet
+      wallet,
     )
-  
+
     // 2. do the actual swapping
     await daiExchangeContract.ethToTokenSwapInput(
       1, // min amount of token retrieved
@@ -78,12 +78,12 @@ describe("do some tests", () => {
       {
         gasLimit: 4000000,
         value: ethers.utils.parseEther("5"),
-      }
+      },
     )
-  
+
     // util function
-    const fromWei = x => ethers.utils.formatUnits(x, 18)
-  
+    const fromWei = (x) => ethers.utils.formatUnits(x, 18)
+
     // 3. check DAI balance
     const daiBalanceWei = await daiContract.balanceOf(wallet.address)
     const daiBalance = parseFloat(fromWei(daiBalanceWei))
