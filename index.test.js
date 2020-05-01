@@ -23,8 +23,8 @@ const startChain = async () => {
 }
 
 jest.setTimeout(100000)
-const uniswap = require("@studydefi/money-legos/uniswap").default
-const erc20 = require("@studydefi/money-legos/erc20").default
+const uniswap = require("@studydefi/money-legos/uniswap")
+const erc20 = require("@studydefi/money-legos/erc20")
 
 describe("do some tests", () => {
   let wallet
