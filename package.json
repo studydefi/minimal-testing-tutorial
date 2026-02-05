@@ -22,7 +22,7 @@
     "ethers": "^4.0.47"
   },
   "devDependencies": {
-    "ganache-core": "^2.10.2",
+    "ganache-core": "^2.13.2",
     "jest": "^25.5.2"
   }
 }
